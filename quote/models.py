@@ -25,10 +25,10 @@ class Quote(models.model):
     post_date = models.DateTimeField('date posted')
 
 class Guess(models.Model):
-    guess_id = # Primary Key
-    user_id = -- Foreign Key
-    group_id = -- Foreign Key
-    quote_id -- Foreign Key
+    guess_id = models.CharField(max_length = 5) # Primary Key
+    user_id =  models.ForiegnKey(User, on_delete=models.CASCADE)
+    group_id = models.ForiegnKey(Group, on_delete=models.CASCADE)
+    quote_id = models.ForiegnKey(Quote, on_delete=models.CASCADE)
     guess = models.CharField(max_length = 50)
     is_correct = models.BooleanField(default = false)
 
