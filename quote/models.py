@@ -11,9 +11,37 @@ class User(models.Model): # what does "models.Model" mean in this context
     quotes_guessed = models.IntegerField(default=0)
 
 class Group(models.Model):
-    group_id =  models.CharField(max_length = 5) #Primary key
+    group_id =  models.CharField(max_length = 5) # Primary Key
     group_name = models.CharField(max_length = 30)
     group_is_private = models.BooleanField(default = false)
 
-Class Quote(models.model):
+class Quote(models.model):
+    quote_id = models.CharField(max_length = 5) # Primary Key
+    group_id = models.ForiegnKey(Group, on_delete=models.CASCADE) # I'm still confused on the meaning of "on_delete=models.CASCADE"
+    user_id = models.ForiegnKey(User, on_delete=models.CASCADE)
+    quote = models.CharField(max_length = 200)
+    quote_details = models.CharField(max_length = 200)
+    answer = models.CharField(max_length = 50)
+    post_date = models.DateTimeField('date posted')
+
+class Guess(models.Model):
+    guess_id = # Primary Key
+    user_id = -- Foreign Key
+    group_id = -- Foreign Key
+    quote_id -- Foreign Key
+    guess = models.CharField(max_length = 50)
+    is_correct = models.BooleanField(default = false)
+
+class User_Membership(models.Model): # This was a related data table in the schema. Is it supposed to be a class in models?
+    user_id = models.ForiegnKey(User, on_delete=models.CASCADE)
+    group_id = models.ForiegnKey(Group, on_delete=models.CASCADE)
+    is_admin = models.BooleanField(default = false)
+
+
+
+
+
+
+
+
 
