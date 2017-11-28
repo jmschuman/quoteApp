@@ -19,6 +19,21 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^groups/', )
+    url(r'^members/', )
+    url(r'^create_group/', )
+    url(r'^add_members/', )
+    url(r'^delete_members/', )
+    url(r'^login/', )
+    url(r'^post_quote/', )
+    url(r'^guess_quote/', )
+    url(r'^delete_quote/', )
+    url(r'^new_user/', )
+    url(r'^show_guesses/', )
+    url(r'^show_posts/', )
+    url(r'^unguessed_quotes/', )
+
+
     
                
                
