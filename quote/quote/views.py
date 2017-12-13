@@ -1,45 +1,42 @@
 
+def groups(request, user_id): # Primary key for User
+    pass # list of groups for specified user
 
+def members(request, group_id): # Primary key for for Group
+    pass # list of first and last names of users in specified group
 
+def create_group(request):
+    pass # Data params - user_id(s), group_name, group_is_private
 
-def groups(user_id): # Primary key for User
-    return # list of groups for specified user
+def add_members(request):
+    pass # Data Params - group_id, user_id(s)
 
-def members(group_id): # Primary key for for Group
-    return # list of first and last names of users in specified group
+def delete_members(request):
+    pass # group_id, user_id(s)
 
-def create_group():
-    return # Data params - user_id(s), group_name, group_is_private
+def login(request):
+    pass # Data Params - username, passward
 
-def add_members():
-    return # Data Params - group_id, user_id(s)
+def post_quote(request):
+    pass # Data Params - Quote
 
-def delete_members():
-    return # group_id, user_id(s)
+def guess_quote(request, quote_id): # Primary key of quote
+    pass  # Data Params - user_id, guess, is_correct)
 
-def login():
-    return # Data Params - username, passward
+def delete_quote(request, quote_id): # Primary key of quote
+    pass # Data Params - user_id, quote
 
-def post_quote():
-    return # Data Params - Quote
+def new_user(request):
+    pass # Dara params - first_name, last_name, email, username, password
 
-def guess_quote(quote_id): # Primary key of quote
-    return  # Data Params - user_id, guess, is_correct)
+def show_guesses(request, user_id): # Primary key for user
+    pass # list of past guesses by specified user
 
-def delete_quote(quote_id): # Primary key of quote
-    return # Data Params - user_id, quote
+def show_posts(request, user_id):   # Primary key for user
+    pass # list of past quotes posted by specified user
 
-def new_user():
-    return # Dara params - first_name, last_name, email, username, password
-
-def show_guesses(user_id): # Primary key for user
-    return # list of past guesses by specified user
-
-def show_posts(user_id):   # Primary key for user
-    return # list of past quotes posted by specified user
-
-def unguessed_quotes(user_id): # Primary key for user
-    return # list of quotes yet to be guessed
+def unguessed_quotes(request, user_id): # Primary key for user
+    pass # list of quotes yet to be guessed
 
 
 
