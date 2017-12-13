@@ -19,27 +19,18 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^groups/', )
-    url(r'^members/', )
-    url(r'^create_group/', )
-    url(r'^add_members/', )
-    url(r'^delete_members/', )
-    url(r'^login/', )
-    url(r'^post_quote/', )
-    url(r'^guess_quote/', )
-    url(r'^delete_quote/', )
-    url(r'^new_user/', )
-    url(r'^show_guesses/', )
-    url(r'^show_posts/', )
-    url(r'^unguessed_quotes/', )
-
-
-    
-               
-               
-               
-               
-               
-               
-               
+    url(r'^(?P<user_id>[0-9]+)/$', views.groups, name = 'groups'),
+    url(r'^members/?P<group_id>[0-9]+)/$', views.members, name = 'members'),
+    url(r'^create_group)/$', views.create_group, name = 'create_group'),
+    url(r'^add_members)/$', views.add_members, name = 'add_members'),
+    url(r'^delete_members)/$', views.delete_members, name = 'delete_members'),
+    url(r'^login)/$', views.login, name = 'login'),
+    url(r'^post_quote)/$', views.post_quote, name = 'post_quote'),
+    url(r'^guess_quote/?P<post_id>[0-9]+)/$', views.guess_quote, name = 'guess_quote'),
+    url(r'^delete_quote/?P<post_id>[0-9]+)/$', views.delete_quote, name = 'delete_quote'),
+    url(r'^new_user)/$', views.new_user, name = 'new_user'),
+    url(r'^show_guesses/?P<user_id>[0-9]+)/$', views.show_guesses, name = 'show_guesses'),
+    url(r'^show_posts/?P<user_id>[0-9]+)/$', views.show_posts, name = 'show_posts'),
+    url(r'^unguessed_quotes/?P<user_id>[0-9]+)/$', views.unguessed_quotes, name = 'unguessed_quotes')
+           
 ]
